@@ -11,13 +11,15 @@ body {
 }
 
 .App {
-   
+        width: 100%;
         display: flex;
-        gap: 30px;
+        flex-direction: column;
         flex-wrap: wrap;
-       
+        gap: 30px;
+        justify-content: center;         
         
 }
+
 @media screen and (max-width: 858px){
 
     .app {
@@ -49,9 +51,13 @@ color: aliceblue;
 }
 
 .location ul {
+
+    width: 100%;
     list-style: none;
     display: inline-flex;
     gap: 150px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-family: cursive;
     font-size: 20px;
@@ -59,10 +65,12 @@ color: aliceblue;
 }
 
 @media screen and (max-width: 858px){
+
     .location ul {
+
+        max-width: 900px;
         justify-content: center;
-        margin-left: -650px;
-        
+        margin-left: 50px;        
         display: block;
         font-size: 18px;
     }
@@ -103,6 +111,15 @@ color: aliceblue;
     align-items: center;
 }
 
+.searchContainer {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 70%;
+    margin-bottom: 2em;
+}
 
 .title_location {
 
@@ -116,8 +133,10 @@ color: aliceblue;
 @media screen and (max-width: 858px){
 
     .title_location {
+
         font-size: 28px;
         justify-content: center;
+        align-items: center;
         padding: 5px;
         margin-left: -640px;
     }
@@ -126,13 +145,12 @@ color: aliceblue;
 .container_resident {
     margin-top: 250px;
     justify-content: center;
+    align-items: center;
     margin-left: 180px;
 }
 
 @media screen and (max-width: 858px){
     .container_resident{
-
-        
 
         display: block;
         width: 100%;

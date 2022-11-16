@@ -3,11 +3,19 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import CardResident from './components/CardResident'
 import LocationInfo from './components/LocationInfo'
+import CardsBox from './components/CardsBox'
+import Header from './components/Header'
+import Search from './components/Search'
+import useFetch from './hooks/useFetch'
 
 
 
 function App() {
 
+  let numRandom = Math.floor(Math.random() * 126)
+  const [number, setNumber] = useState(numRandom)
+  const planet = useFetch(`https://rickandmortyapi.com/api/location/
+                          ${number}`, number)
 
   const [location, setLocation] = useState()
   const [searchInput, setSearchInput] = useState ('')
@@ -37,13 +45,9 @@ function App() {
     setSearchInput(e.target.search.value)
 
   }
-
-  
-
+ 
   return (
     <div className="App">
-
-      
 
       <h1 className="title"></h1>
       <form className="search" onSubmit={handleSubmit}>
@@ -67,7 +71,5 @@ function App() {
         
   )
 }
-
-
 
 export default App

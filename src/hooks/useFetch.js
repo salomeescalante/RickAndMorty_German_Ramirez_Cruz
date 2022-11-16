@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 
 
-const useFetch = url => {
+const useFetch = (url, second) => {
   
    const [response, setResponse] = useState() 
 
@@ -13,7 +13,7 @@ const useFetch = url => {
      .catch(err => console.log(err))
    
      
-   }, [])
+   }, [second])
 
    return response
    

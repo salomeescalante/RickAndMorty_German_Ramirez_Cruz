@@ -1,23 +1,32 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 import useFetch from '../hooks/useFetch'
 
-const CardResident = ({url}) => {
+const CardResident = ({ url, resident, number }) => {
 
+  const [user, setUser] = useState(resident)
+  const [bgColor, setBgColor] = useState("")
 
-  const resident = useFetch(url) 
+  const resident = useFetch(url, user)
 
-  
+  useEffect(() => {
+    if(resident.status === "Alive"){
+      return setBgColor("green");
+    } else {
+      return setBgColor("yellow")
+    }
+  }, [resident]
+  )
 
   return (
-
-
 
     <article className='rectangle'>
 
       <header>
 
         <img src={resident?.image} alt={`image of ${resident?.name}`} />
-        
+
 
       </header>
 
@@ -43,7 +52,7 @@ const CardResident = ({url}) => {
 
     </article>
 
-    
+
   )
 }
 
